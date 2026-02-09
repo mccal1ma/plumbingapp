@@ -49,6 +49,7 @@ const userSlice = createSlice({
       state.user = null;
       state.isSidebarOpen = false;
       removeUserFromLocalStorage();
+      localStorage.removeItem('token');
       if (payload) {
         toast.success(payload);
       }
@@ -63,11 +64,12 @@ const userSlice = createSlice({
         state.isLoading = true;
       })
       .addCase(registerUser.fulfilled, (state, { payload }) => {
-        const { user } = payload;
+        const { user, token } = payload;
         state.isLoading = false;
         state.user = user;
         addUserToLocalStorage(user);
-        toast.success(`Hello There ${user.name}`);
+        localStorage.setItem('token', token); 
+        toast.success(`Hello There ${user.firstName}`);
       })
       .addCase(registerUser.rejected, (state, { payload }) => {
         state.isLoading = false;
@@ -77,11 +79,12 @@ const userSlice = createSlice({
         state.isLoading = true;
       })
       .addCase(loginUser.fulfilled, (state, { payload }) => {
-        const { user } = payload;
+        const { user, token } = payload;
         state.isLoading = false;
         state.user = user;
         addUserToLocalStorage(user);
-        toast.success(`Welcome back ${user.name}`);
+        localStorage.setItem('token', token); 
+        toast.success(`Welcome back ${user.firstName}`);
       })
       .addCase(loginUser.rejected, (state, { payload }) => {
         state.isLoading = false;
@@ -91,10 +94,11 @@ const userSlice = createSlice({
         state.isLoading = true;
       })
       .addCase(updateUser.fulfilled, (state, { payload }) => {
-        const { user } = payload;
+        const { user, token } = payload;
         state.isLoading = false;
         state.user = user;
         addUserToLocalStorage(user);
+        localStorage.setItem('token', token);   
         toast.success("User updated successfully");
       })
       .addCase(updateUser.rejected, (state, { payload }) => {

@@ -7,7 +7,7 @@ import { getAllJobs } from "../features/allJobs/allJobsSlice";
 import PageBtnContainer from "./PageBtnContainer";
 
 const JobsContainer = () => {
-  const { jobs, isLoading, page, totalJobs, numOfPages, search, searchStatus, searchType, sort } = useSelector(
+  const { jobs, isLoading, page, totalJobs, numOfPages, search, searchStatus, searchJobType, sort } = useSelector(
     (store) => store.allJobs,
   );
   const dispatch = useDispatch();
@@ -15,7 +15,7 @@ const JobsContainer = () => {
   useEffect(() => {
     //dispatch getAllJobs thunk
     dispatch(getAllJobs());
-  }, [page, search, searchStatus, searchType, sort, dispatch]);
+  }, [page, search, searchStatus, searchJobType, sort, dispatch]);
 
   if (isLoading) {
     return <Loading center />;
@@ -23,6 +23,11 @@ const JobsContainer = () => {
   if (jobs.length === 0) {
     return <Wrapper>No jobs to display...</Wrapper>;
   }
+  console.log('Jobs array:', jobs);
+  console.log('Jobs length:', jobs?.length);
+  console.log('Total jobs:', totalJobs);
+  //console.log('Redux allJobs state:', useSelector((store) => store.allJobs));
+
   return (
     <Wrapper>
       <h5>{totalJobs} job{jobs.length > 1 && "s"} found</h5>

@@ -21,6 +21,9 @@ const Wrapper = styled.main`
       color: var(--primary-700);
     }
   }
+  h3 span {
+    font-style: italic;
+  }
   p {
     color: var(--grey-600);
   }

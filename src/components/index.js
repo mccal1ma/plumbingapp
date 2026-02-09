@@ -10,4 +10,7 @@ import JobsContainer from "./JobsContainer";
 import Loading from "./Loading";
 import ChartsContainer from "./ChartsContainer";
 import Job from "./Job";
-export { StatsContainer,  Logo, FormRow, SmallSidebar, BigSidebar, NavBar, FormRowSelect, SearchContainer, JobsContainer, Loading, ChartsContainer, Job };
+import CharacterCounter from "./CharacterCounter";
+import PhoneLink from "./PhoneLink";
+import MessageEmployeeModal from "./MessageEmployeeModal";
+export { StatsContainer,  Logo, FormRow, SmallSidebar, BigSidebar, NavBar, FormRowSelect, SearchContainer, JobsContainer, Loading, ChartsContainer, Job, CharacterCounter, PhoneLink, MessageEmployeeModal };

@@ -5,6 +5,10 @@ import mongoose from "mongoose";
 
 import authRoutes from "./routes/authRoutes.js";
 import jobRoutes from "./routes/jobRoutes.js";
+import employeeRoutes from "./routes/employeeRoutes.js";
+import messageRoutes from "./routes/messageRoutes.js";
+import notificationRoutes from "./routes/notificationRoutes.js";
+import analyticsRoutes from "./routes/analyticsRoutes.js";
 
 dotenv.config();
 
@@ -15,6 +19,10 @@ app.use(express.json());
 
 app.use("/api/v1/auth", authRoutes);
 app.use("/api/v1/jobs", jobRoutes);
+app.use("/api/v1/employees", employeeRoutes);
+app.use("/api/v1/messages", messageRoutes);
+app.use("/api/v1/notifications", notificationRoutes);
+app.use("/api/v1/analytics", analyticsRoutes);
 
 const PORT = process.env.PORT || 5000;
 

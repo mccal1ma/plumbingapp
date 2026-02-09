@@ -7,6 +7,11 @@ const JobSchema = new mongoose.Schema(
       required: true,
       trim: true,
     },
+    customerPhone: {
+      type: String,
+      required: [true, "Please provide customer phone number"],
+      trim: true,
+    },
     status: {
       type: String,
       enum: ["active", "in progress", "completed", "payment pending"],
@@ -30,8 +35,23 @@ const JobSchema = new mongoose.Schema(
       default: "",
     },
     employeeAssigned: {
+      type: mongoose.Types.ObjectId,
+      ref: "User",
+      default: null,
+    },
+    assignmentStatus: {
+      type: String,
+      enum: ["unassigned", "pending", "accepted", "rejected"],
+      default: "unassigned",
+    },
+    rejectionReason: {
       type: String,
       default: "",
+    },
+    rejectedBy: {
+      type: mongoose.Types.ObjectId,
+      ref: "User",
+      default: null,
     },
     createdBy: {
       type: mongoose.Types.ObjectId,

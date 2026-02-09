@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import img from '../assets/images/not-found.svg';
+import img from '../assets/images/not-found2.svg';
 import Wrapper from "../assets/wrappers/ErrorPage";
 
 const Error = () => {

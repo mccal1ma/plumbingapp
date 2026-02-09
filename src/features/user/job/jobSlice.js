@@ -5,6 +5,7 @@ import {createJobThunk, deleteJobThunk, editJobThunk} from "./jobThunk";
 const initialState = {
   isLoading: false,
   customerName: "",
+  customerPhone: "",
   status: "active",
   jobType: "standard",
   statusOptions: [

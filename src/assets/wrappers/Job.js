@@ -88,6 +88,9 @@ const Wrapper = styled.article`
     height: 30px;
     margin-top: 0.5rem;
   }
+  .payment-pending {
+    width: 140px;
+  }
   footer {
     margin-top: 1rem;
   }

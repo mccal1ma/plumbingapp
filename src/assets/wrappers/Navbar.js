@@ -29,6 +29,9 @@ const Wrapper = styled.nav`
   background: var(--white);
   .btn-container {
     position: relative;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
   }
   .btn {
     display: flex;
@@ -41,15 +44,16 @@ const Wrapper = styled.nav`
 
   .dropdown {
     position: absolute;
-    top: 40px;
-    left: 0;
-    width: 100%;
+    top: 45px;
+    right: 0;
+    width: 120px;
     background: var(--primary-100);
     box-shadow: var(--shadow-2);
     padding: 0.5rem;
     text-align: center;
     visibility: hidden;
     border-radius: var(--borderRadius);
+    z-index: 999;
   }
   .show-dropdown {
     visibility: visible;

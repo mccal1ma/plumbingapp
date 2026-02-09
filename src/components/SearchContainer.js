@@ -6,7 +6,7 @@ import { handleChange, clearFilters } from "../features/allJobs/allJobsSlice";
 
 const SearchContainer = () => {
   const [ localSearch, setLocalSearch ] = useState('')
-  const { isLoading, search, searchStatus, searchType, sort, sortOptions } =
+  const { isLoading, searchStatus, searchType, sort, sortOptions } =
     useSelector((store) => store.allJobs);
   const dispatch = useDispatch();
   const { jobTypeOptions, statusOptions } = useSelector((store) => store.job);
@@ -71,13 +71,17 @@ const SearchContainer = () => {
             list={['all', ...sortOptions]}
             />
         </div>
+        <div style={{marginTop: "1rem", justifyContent: "center", alignItems: "center", display: "flex"}}>
+
         <button
-          className="btn btn-block btn-danger"
+          className="btn btn-danger"
+          style={{padding: "0.5rem 2rem", minWidth: "180px"}}
           disabled={isLoading}
           onClick={handleSubmit}
-        >
+          >
           clear filters
         </button>
+          </div>
       </form>
     </Wrapper>
   );

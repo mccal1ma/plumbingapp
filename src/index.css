@@ -25,7 +25,17 @@ html {
   --primary-900: #871d16;
 
   /* grey */
-  --grey-50: #f0f4f8;
+  --grey-50: #ffffff;   /* Very light grey, slight warmth */
+  --grey-100: #f4e8e7;  /* Light grey-beige */
+  --grey-200: #e6d6d4;  /* Warm neutral light grey */
+  --grey-300: #d4c3c2;  /* Slight warmth in grey */
+  --grey-400: #c1aead;  /* Muted taupe-like gray */
+  --grey-500: #aa9796;  /* Rich neutral mid-tone grey */
+  --grey-600: #877575;  /* Stronger grey, balanced warmth */
+  --grey-700: #655757;  /* Deep & subdued grey */
+  --grey-800: #4a3d3c;  /* Very dark neutral mixed with warmth */
+  --grey-900: #322727;  /* Deep, rich, dark grey */
+  /* --grey-50: #f0f4f8;
   --grey-100: #d9e2ec;
   --grey-200: #bcccdc;
   --grey-300: #9fb3c8;
@@ -34,7 +44,7 @@ html {
   --grey-600: #486581;
   --grey-700: #334e68;
   --grey-800: #243b53;
-  --grey-900: #102a43;
+  --grey-900: #102a43; */
   /* rest of the colors */
   --black: #222;
   --white: #fff;
@@ -137,6 +147,10 @@ ul {
   list-style-type: none;
   padding: 0;
 }
+nav {
+  display: flex;
+  justify-content: space-between;
+}
 
 .img {
   width: 100%;
@@ -162,6 +176,14 @@ ul {
   background: var(--primary-700);
   box-shadow: var(--shadow-3);
 }
+a.btn {
+  color: var(--white) !important;
+  text-decoration: none !important;
+}
+a.btn:hover {
+  color: var(--white) !important;
+  text-decoration: none !important;
+}
 .btn-hipster {
   color: var(--primary-500);
   background: var(--primary-200);
@@ -176,6 +198,7 @@ ul {
 .btn-hero {
   font-size: 1.25rem;
   padding: 0.5rem 1.25rem;
+  color: var(--white);
 }
 .btn-danger {
   background: var(--red-light);

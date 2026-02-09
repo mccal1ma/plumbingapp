@@ -12,7 +12,7 @@ export const createJobThunk = async (job, thunkAPI) => {
     thunkAPI.dispatch(clearValues());
     return resp.data;
   } catch (error) {
-    return checkForUnauthorizedResponse(error, thunkAPI)
+    return checkForUnauthorizedResponse(error, thunkAPI);
   }
 };
 

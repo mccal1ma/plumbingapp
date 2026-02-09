@@ -15,10 +15,20 @@ const initialState = {
   totalJobs: 0,
   numOfPages: 1,
   page: 1,
-  stats: {},
+  stats: {
+    totalJobs: 0,
+    upcomingAppointments: 0,
+    pendingJobs: 0,
+  },
   monthlyAppointments: [],
   ...initialFiltersState,
 };
+
+// Move these BEFORE the slice
+export const getAllJobs = createAsyncThunk(
+  "allJobs/getJobs",
+  getAllJobsThunk
+);
 
 export const showStats = createAsyncThunk(
   "allJobs/showStats",
@@ -36,7 +46,6 @@ const allJobsSlice = createSlice({
       state.isLoading = false;
     },
     handleChange: (state, { payload: { name, value } }) => {
-      //state.page = 1;
       state[name] = value;
     },
     clearFilters: (state) => {
@@ -76,11 +85,6 @@ const allJobsSlice = createSlice({
       });
   },
 });
-
-export const getAllJobs = createAsyncThunk(
-  "allJobs/getJobs",
-  getAllJobsThunk
-);
 
 export const {
   showLoading,
