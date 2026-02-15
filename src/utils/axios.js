@@ -2,7 +2,7 @@ import axios from "axios";
 import {logoutUser} from "../features/user/userSlice";
 
 const customFetch = axios.create({
-  baseURL: "/api/v1",
+  baseURL: "https://firsttimeplumbingapp.onrender.com/api/v1",
 });
 
 customFetch.interceptors.request.use(
