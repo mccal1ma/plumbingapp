@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { useDispatch, useSelector } from "react-redux";
-import { logoutUser, toggleSidebar } from "../features/user/userSlice";
+import { toggleSidebar } from "../features/user/userSlice";
 import { clearStore } from "../features/user/userSlice";
 import { getUnreadCount } from "../features/notifications/notificationsSlice";
 

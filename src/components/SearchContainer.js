@@ -26,7 +26,7 @@ const SearchContainer = () => {
     }
   }
 
-  const optimizedDebounce = useMemo (() => debounce(), [])
+  const optimizedDebounce = useMemo (() => debounce(), [debounce])
 
   const handleSubmit = (e) => {
     e.preventDefault();
