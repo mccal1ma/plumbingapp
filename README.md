@@ -93,21 +93,31 @@ npm install
 
 ### 3. Environment Configuration
 
-Create a `.env` file in the `server` directory:
+Copy `server/.env.example` to `server/.env` and fill in your values:
+
+```bash
+cd server
+copy .env.example .env
+```
+
+Then update `server/.env`:
 
 ```env
 # MongoDB Connection
-MONGO_URI=your_mongodb_connection_string
+MONGO_URL=your_mongodb_connection_string
 
 # JWT Configuration
-JWT_SECRET=your_jwt_secret_key_here
-JWT_LIFETIME=30d
+JWT_SECRET=replace_with_a_long_random_secret
+JWT_LIFETIME=1d
 
 # Server Port (optional)
 PORT=5000
+
+# Environment
+NODE_ENV=development
 ```
 
-**Important**: Replace `your_mongodb_connection_string` with your actual MongoDB connection string and `your_jwt_secret_key_here` with a secure random string.
+**Important**: Keep `server/.env` private and never commit real secrets.
 
 ### 4. Start the Application
 
